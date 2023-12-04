@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/scss/styles.css">
+    <title>Style Generator: border</title>
+    <link rel="icon" type="image/x-icon" href="src/img/favicon.ico">
+</head>
+<body>
+    <nav class="navMenu">
+        <a href="https://mauriciobarrueta.github.io/boxShadowGenerator/">Box Shadow</a>
+        <a href="https://mauriciobarrueta.github.io/textShadowGenerator/">Text Shadow</a>
+        <a class="active">Border</a>
+        <a href="#">Border Radius</a>
+        <a href="#">CSS Transform</a>
+        <a href="#">Image Filter</a>
+        <a href="https://mauriciobarrueta.github.io/gradientBgGenerator/">CSS Gradient</a>
+        <a href="#">Color Picker</a>
+      </nav>
+      
+    <div class="container">
+        <div class="card-container">
+            <span class="title"></span>
+            <div class="border-properties">
+                <div class="column">
+                    <div class="input-group">
+                        <label for="bWidth" class="form-label">Border Width:</label>
+                        <input type="range" class="form-range" min="0" max="100" step="1" value="1" id="bWidth" oninput="bRange.value=bWidth.value">
+                        <input type="number" id="bRange" min="0" max="100" value="1" oninput="bWidth.value=bRange.value"><span>px</span>
+                    </div>                                   
+                    <div class="input-group">
+                        <label for="border-style" class="form-label" id="select-label">Border Style:</label>
+                        <select class="form-select" id="border-style"></select>
+                    </div>
+                    <div class="colors">
+                        <div class="input-group border-color">
+                            <label class="form-label" for="border-color">Border Color:</label>
+                            <input type="color" id="border-color" value="#000000">
+                        </div>
+                        <div class="input-group bg-color">
+                            <label class="form-label" for="bg-color">Background Color:</label>
+                            <input type="color" id="bg-color" value="#F9DC5C">
+                        </div>
+                    </div>                                                
+                </div>  
+                <div class="column individual">
+                    <div class="input-group b-individual">
+                        <label for="btWidth" class="form-label">Border Top Width:</label>
+                        <input type="number" id="btRange" min="0" max="100" value="1"><span>px</span>
+                        <select class="form-select individual-select" id="bt-style"></select>
+                        <input type="color" id="bt-color" title="Border Top Color">
+                    </div> 
+                    <div class="input-group b-individual">
+                        <label for="brWidth" class="form-label">Border Right Width:</label>
+                        <input type="number" id="brRange" min="0" max="100" value="1"><span>px</span>
+                        <select class="form-select individual-select" id="br-style"></select>
+                        <input type="color" id="br-color" title="Border Right Color">
+                    </div> 
+                    <div class="input-group b-individual">
+                        <label for="bbWidth" class="form-label">Border Bottom Width:</label>
+                        <input type="number" id="bbRange" min="0" max="100" value="1"><span>px</span>
+                        <select class="form-select individual-select" id="bb-style"></select>
+                        <input type="color" id="bb-color" title="Border Bottom Color">
+                    </div> 
+                    <div class="input-group b-individual">
+                        <label for="blWidth" class="form-label">Border Left Width:</label>
+                        <input type="number" id="blRange" min="0" max="100" value="1"><span>px</span>
+                        <select class="form-select individual-select" id="bl-style"></select>
+                        <input type="color" id="bl-color" title="Border Left Color">
+                    </div> 
+                    <div class="colors">                        
+                        <div class="input-group bg-color">
+                            <label class="form-label" for="bg-color">Background Color:</label>
+                            <input type="color" id="bg-color-individual" value="#F9DC5C">
+                        </div>
+                    </div>  
+                </div>                        
+            </div>  
+            <div class="form-check form-switch">
+                <label for="individual-border" class="form-check-label">General</label>
+                <input class="form-check-input" type="checkbox" role="switch" id="individual-border">
+                <label class="form-check-label" for="individual-border">Personalizado</label>
+            </div>  
+
+            <div class="border-preview">
+                <small>El resultado puede variar dependiendo el tamaño</small>
+                <div class="preview"><span>Vista previa</span></div>
+            </div> 
+            
+            <div class="border-code">
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="CSS-code" readonly></textarea>
+                    <label for="CSS-code">El código CSS se genera automáticamente:</label>
+                </div>
+                <button class="btn btn-danger copy-btn" title="Copiar código">&#xf0c5;</button>
+            </div>       
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="src/js/main.js"></script>
+</body>
+</html>
