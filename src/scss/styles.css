@@ -9,7 +9,6 @@
 /* Color Palette */
 body {
   background-color: #011936;
-  padding: 1em;
 }
 body .navMenu {
   text-align: center;
@@ -42,6 +41,7 @@ body .container, body .border-properties, body .colors, body .preview, body .bor
 }
 body .container {
   min-height: 90vh;
+  padding: 1em;
 }
 body .container .card-container {
   width: 500px;
