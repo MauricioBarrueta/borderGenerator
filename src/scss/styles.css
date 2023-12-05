@@ -9,6 +9,7 @@
 /* Color Palette */
 body {
   background-color: #011936;
+  padding: 1em;
 }
 body .navMenu {
   text-align: center;
