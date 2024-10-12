@@ -33,18 +33,17 @@ body .navMenu a:last-child {
 body .navMenu a:hover {
   color: #ED254E;
 }
-body .container, body .border-properties, body .colors, body .preview, body .border-code {
+body .container, body .border-properties, body .column, body .colors, body .preview, body .border-code {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
 body .container {
-  min-height: 90vh;
-  padding: 1em;
+  min-height: 94vh;
 }
 body .container .card-container {
-  width: 500px;
+  width: 600px;
   min-width: auto;
   height: auto;
   padding: 1em;
@@ -66,23 +65,29 @@ body .container .card-container .border-properties {
 }
 body .container .card-container .border-properties .column {
   flex-direction: row;
-  flex-wrap: nowrap;
   width: 100%;
   height: auto;
   padding: 5px;
-  border-radius: 5px;
+  color: white;
   background-color: #ED254E;
   border: 2px solid #011936;
-  color: white;
+  border-bottom-style: dotted;
+}
+body .container .card-container .border-properties .column:first-child {
+  border-radius: 5px 5px 0 0;
+}
+body .container .card-container .border-properties .column .input-group:nth-child(2) {
+  border-right: 0;
 }
 body .container .card-container .border-properties .column .input-group {
+  width: 50%;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
   padding: 5px 0;
+  border-right: 2px dotted #011936;
 }
 body .container .card-container .border-properties .column .input-group label {
-  width: 75px;
+  width: 100%;
   min-width: -moz-fit-content;
   min-width: fit-content;
   height: 25px;
@@ -111,25 +116,34 @@ body .container .card-container .border-properties .column .input-group span {
   margin-left: 5px !important;
 }
 body .container .card-container .border-properties .column .input-group .form-range {
-  width: 50%;
+  width: 65%;
   height: 25px;
   cursor: pointer;
   margin-inline: 10px !important;
 }
 body .container .card-container .border-properties .column .input-group .form-select {
-  width: 35%;
+  width: 50%;
   height: 25px;
-  flex: none;
   padding: 5px;
   border-radius: 5px !important;
-  margin-inline: 10px !important;
+  margin-inline: 20px !important;
   cursor: pointer;
-  border: 1px solid #011936;
+  border: 1px dotted white;
   font-size: 13px;
   line-height: 1;
+  background-color: transparent;
+  color: white;
+  --bs-form-select-bg-img: url("https://api.iconify.design/uil:angle-down.svg?color=%23ffffff");
+}
+body .container .card-container .border-properties .column .input-group .form-select:focus {
+  box-shadow: none;
+}
+body .container .card-container .border-properties .column .input-group .form-select option {
+  background-color: white;
+  color: #000;
 }
 body .container .card-container .border-properties .column .input-group input[type=color] {
-  width: 50px;
+  width: 45px;
   height: 25px;
   appearance: none;
   -webkit-appearance: none;
@@ -153,64 +167,58 @@ body .container .card-container .border-properties .column .input-group input[ty
 body .container .card-container .border-properties .column .colors {
   width: 100%;
   flex-wrap: nowrap;
+  flex-direction: row;
   border-top: 2px dotted #011936;
 }
 body .container .card-container .border-properties .column .colors .border-color, body .container .card-container .border-properties .column .colors .bg-color {
   margin-bottom: 0;
 }
 body .container .card-container .border-properties .column .colors .border-color label, body .container .card-container .border-properties .column .colors .bg-color label {
-  min-width: -moz-fit-content;
-  min-width: fit-content;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
   margin-right: 10px;
-  line-height: 1.5;
-}
-body .container .card-container .border-properties .column .colors .border-color:last-child, body .container .card-container .border-properties .column .colors .bg-color:last-child {
-  border-left: 2px dotted #011936;
+  line-height: 1.75;
 }
 body .container .card-container .border-properties .individual {
   display: none;
 }
-body .container .card-container .border-properties .individual .b-individual {
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  padding: 5px 0;
-  border-bottom: 2px dotted #011936;
-}
-body .container .card-container .border-properties .individual .b-individual label {
-  width: 170px !important;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-}
-body .container .card-container .border-properties .individual .b-individual input[type=number] {
-  width: 50px;
-  -webkit-appearance: initial !important;
-     -moz-appearance: initial !important;
-          appearance: initial !important;
-}
-body .container .card-container .border-properties .individual .b-individual span {
-  font-size: 9px !important;
-  margin-left: 2.5px !important;
-}
-body .container .card-container .border-properties .individual .b-individual .form-select {
-  width: 35%;
-  margin: 0 7px;
-}
-body .container .card-container .border-properties .individual .b-individual:nth-child(4) {
+body .container .card-container .border-properties .individual .input-group:nth-child(3), body .container .card-container .border-properties .individual .input-group:nth-child(4) {
   border-bottom: 0;
 }
+body .container .card-container .border-properties .individual .input-group {
+  border-bottom: 2px dotted #011936;
+  padding: 5px;
+}
+body .container .card-container .border-properties .individual .input-group label {
+  line-height: 1.5 !important;
+}
+body .container .card-container .border-properties .individual .input-group span {
+  font-size: 9px;
+  margin-left: 2px !important;
+}
+body .container .card-container .border-properties .individual .input-group .form-select {
+  width: 4% !important;
+  margin-inline: 5px !important;
+}
+body .container .card-container .border-properties .individual .input-group:nth-child(4) {
+  border-right: 0;
+}
 body .container .card-container .border-properties .individual .bg-color {
-  border-left: 0 !important;
+  height: 30px;
+  border: 0 !important;
 }
 body .container .card-container .form-check {
+  background-color: #ED254E;
+  border: 2px solid #011936;
+  border-top: 0;
   margin: 0;
   padding: 5px 0;
-  border-bottom: 2px solid #011936;
+  border-radius: 0 0 5px 5px;
+  color: white;
 }
 body .container .card-container .form-check label {
-  font-size: 15px;
-  font-weight: bold;
-  color: #011936;
+  font-size: 14px;
+  line-height: 1.75;
 }
 body .container .card-container .form-check input {
   float: initial;
@@ -228,7 +236,7 @@ body .container .card-container .border-preview small {
 }
 body .container .card-container .border-preview .preview {
   width: 100%;
-  height: 200px !important;
+  height: 175px;
   position: relative;
   background-color: #F9DC5C;
   border-radius: 5px;
@@ -251,8 +259,7 @@ body .container .card-container .border-code .form-floating {
   width: 100%;
 }
 body .container .card-container .border-code .form-floating textarea {
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 100px;
   border: 2px solid #011936;
   border-radius: 5px;
   cursor: copy;

@@ -29,53 +29,53 @@
             <div class="border-properties">
                 <div class="column">
                     <div class="input-group">
-                        <label for="bWidth" class="form-label">Border Width:</label>
+                        <label for="bWidth" class="form-label">Border width:</label>
                         <input type="range" class="form-range" min="0" max="100" step="1" value="1" id="bWidth" oninput="bRange.value=bWidth.value">
                         <input type="number" id="bRange" min="0" max="100" value="1" oninput="bWidth.value=bRange.value"><span>px</span>
                     </div>                                   
                     <div class="input-group">
-                        <label for="border-style" class="form-label" id="select-label">Border Style:</label>
+                        <label for="border-style" class="form-label" id="select-label">Border style:</label>
                         <select class="form-select" id="border-style"></select>
                     </div>
                     <div class="colors">
                         <div class="input-group border-color">
-                            <label class="form-label" for="border-color">Border Color:</label>
+                            <label class="form-label" for="border-color">Border color:</label>
                             <input type="color" id="border-color" value="#000000">
                         </div>
                         <div class="input-group bg-color">
-                            <label class="form-label" for="bg-color">Background Color:</label>
+                            <label class="form-label" for="bg-color">Background:</label>
                             <input type="color" id="bg-color" value="#F9DC5C">
                         </div>
                     </div>                                                
                 </div>  
                 <div class="column individual">
-                    <div class="input-group b-individual">
-                        <label for="btWidth" class="form-label">Border Top Width:</label>
+                    <div class="input-group">
+                        <label for="btWidth" class="form-label">Border Top:</label>
                         <input type="number" id="btRange" min="0" max="100" value="1"><span>px</span>
                         <select class="form-select individual-select" id="bt-style"></select>
                         <input type="color" id="bt-color" title="Border Top Color">
                     </div> 
-                    <div class="input-group b-individual">
-                        <label for="brWidth" class="form-label">Border Right Width:</label>
+                    <div class="input-group">
+                        <label for="brWidth" class="form-label">Border Right:</label>
                         <input type="number" id="brRange" min="0" max="100" value="1"><span>px</span>
                         <select class="form-select individual-select" id="br-style"></select>
                         <input type="color" id="br-color" title="Border Right Color">
                     </div> 
-                    <div class="input-group b-individual">
-                        <label for="bbWidth" class="form-label">Border Bottom Width:</label>
-                        <input type="number" id="bbRange" min="0" max="100" value="1"><span>px</span>
-                        <select class="form-select individual-select" id="bb-style"></select>
-                        <input type="color" id="bb-color" title="Border Bottom Color">
-                    </div> 
-                    <div class="input-group b-individual">
-                        <label for="blWidth" class="form-label">Border Left Width:</label>
+                    <div class="input-group">
+                        <label for="blWidth" class="form-label">Border Left:</label>
                         <input type="number" id="blRange" min="0" max="100" value="1"><span>px</span>
                         <select class="form-select individual-select" id="bl-style"></select>
                         <input type="color" id="bl-color" title="Border Left Color">
                     </div> 
+                    <div class="input-group">
+                        <label for="bbWidth" class="form-label">Border Bottom:</label>
+                        <input type="number" id="bbRange" min="0" max="100" value="1"><span>px</span>
+                        <select class="form-select individual-select" id="bb-style"></select>
+                        <input type="color" id="bb-color" title="Border Bottom Color">
+                    </div>                     
                     <div class="colors">                        
                         <div class="input-group bg-color">
-                            <label class="form-label" for="bg-color">Background Color:</label>
+                            <label class="form-label" for="bg-color">Background:</label>
                             <input type="color" id="bg-color-individual" value="#F9DC5C">
                         </div>
                     </div>  
@@ -86,12 +86,10 @@
                 <input class="form-check-input" type="checkbox" role="switch" id="individual-border">
                 <label class="form-check-label" for="individual-border">Personalizado</label>
             </div>  
-
             <div class="border-preview">
-                <small>El resultado puede variar dependiendo el tamaño</small>
+                <small>El resultado final puede variar dependiendo el tamaño del elemento</small>
                 <div class="preview"><span>Vista previa</span></div>
-            </div> 
-            
+            </div>             
             <div class="border-code">
                 <div class="form-floating">
                     <textarea class="form-control" placeholder="Leave a comment here" id="CSS-code" readonly></textarea>

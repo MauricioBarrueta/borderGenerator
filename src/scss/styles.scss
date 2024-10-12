@@ -6,11 +6,7 @@
 }
 
 /* Color Palette */
-$redCrayola: #ED254E;
-$naplesYellow: #F9DC5C;
-$teaGreen: #C2EABD;
-$oxfordBlue: #011936;
-$Charcoal: #465362;
+$redCrayola: #ED254E; $naplesYellow: #F9DC5C; $teaGreen: #C2EABD; $oxfordBlue: #011936; $Charcoal: #465362;
 
 body {
     background-color: $oxfordBlue; 
@@ -21,21 +17,20 @@ body {
         a {
             color: white;
             font-size: 16px; text-decoration: none; text-transform: uppercase;  
-            padding: 0 1em; border-right: 2px dotted $redCrayola;         
-            transition: all 0.2s ease-in-out;
+            padding: 0 1em; border-right: 2px dotted $redCrayola; transition: all 0.2s ease-in-out;
             &:last-child { border-right: 0; }
             &:hover { color: $redCrayola; }
         }
     }
 
-    .container, .border-properties, .colors, .preview, .border-code { 
+    .container, .border-properties, .column, .colors, .preview, .border-code { 
         display: flex; align-items: center; justify-content: center; flex-wrap: wrap; 
     }
 
     .container {
-        min-height: 90vh; padding: 1em;
+        min-height: 94vh; 
         .card-container { 
-            width: 500px; min-width: auto; height: auto;
+            width: 600px; min-width: auto; height: auto;
             padding: 1em; border-radius: 10px; box-shadow: 0px 0px 5px 5px $Charcoal;
             background-color: $teaGreen; text-align: center;  
 
@@ -43,129 +38,102 @@ body {
                 font-size: 14px; font-weight: bold;
                 color: $oxfordBlue; user-select: none;
             }
+            
             .border-properties {                 
                 margin-top: 5px;  
                 .column {
-                    flex-direction: row; flex-wrap: nowrap;
-                    width: 100%; height: auto;
-                    padding: 5px; border-radius: 5px;
-                    background-color: $redCrayola; border: 2px solid $oxfordBlue; color: white;                     
-
+                    flex-direction: row; width: 100%; height: auto;
+                    padding: 5px; color: white;  
+                    background-color: $redCrayola; border: 2px solid $oxfordBlue; border-bottom-style: dotted;
+                    &:first-child { border-radius: 5px 5px 0 0; }    
+                    .input-group:nth-child(2) { border-right: 0; } 
                     .input-group {
-                        justify-content: center; align-items: center; flex-wrap: nowrap;
-                        padding: 5px 0;
+                        width: 50%; justify-content: center; align-items: center; padding: 5px 0; 
+                        border-right: 2px dotted $oxfordBlue; 
                         label {                       
-                            width: 75px; min-width: fit-content; height: 25px;
+                            width: 100%; min-width: fit-content; height: 25px;
                             font-size: 15px; margin-bottom: 0;
                         }   
-                        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
-                            -webkit-appearance: none; margin: 0;
-                        }
+                        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
                         input[type = number] {
                             width: 25px; height: 25px;
                             appearance: none; -moz-appearance: textfield;
-                            text-align: center; font-size: 9px;
-                            border: 0; margin: 0 !important; border-radius: 5px !important;
+                            text-align: center; font-size: 9px; border: 0; margin: 0 !important; border-radius: 5px !important;
                         }    
-                        span {
-                            font-size: 11px; color: white;
-                            margin-left: 5px !important;
-                        }    
+                        span { font-size: 11px; color: white; margin-left: 5px !important; }    
                         .form-range {
-                            width: 50%; height: 25px; cursor: pointer;
+                            width: 65%; height: 25px; cursor: pointer;
                             margin-inline: 10px !important;                                             
                         }
                         .form-select {      
-                            width: 35%; height: 25px; flex: none;                 
-                            padding: 5px; border-radius: 5px !important; margin-inline: 10px !important;
-                            cursor: pointer; border: 1px solid $oxfordBlue;
-                            font-size: 13px; line-height: 1;
+                            width: 50%; height: 25px;              
+                            padding: 5px; border-radius: 5px !important; margin-inline: 20px !important; cursor: pointer; 
+                            border: 1px dotted white; font-size: 13px; line-height: 1; 
+                            background-color: transparent; color: white; --bs-form-select-bg-img: url('https://api.iconify.design/uil:angle-down.svg?color=%23ffffff');
+                            &:focus { box-shadow: none; }
+                            option { background-color: white; color: #000; }
                         }                  
                         input[type = color] {                       
-                            width: 50px; height: 25px;
+                            width: 45px; height: 25px;
                             appearance: none; -webkit-appearance: none; -moz-appearance: none;
                             border: 0; background: transparent;
                             cursor: pointer; transition: 0.25s;
                             &:hover { scale: 1.05; }
-                            &::-webkit-color-swatch {
-                                border-radius: 10px; border: 1px solid white;
-                            }
-                            &::-moz-color-swatch {
-                                border-radius: 10px; border: 1px solid white;
-                            }
+                            &::-webkit-color-swatch { border-radius: 10px; border: 1px solid white; }
+                            &::-moz-color-swatch { border-radius: 10px; border: 1px solid white; }
                         }      
                     }                    
                     .colors { 
-                        width: 100%; flex-wrap: nowrap;
+                        width: 100%; flex-wrap: nowrap; flex-direction: row;
                         border-top: 2px dotted $oxfordBlue;
                         .border-color, .bg-color {
                             margin-bottom: 0; 
                             label { 
-                                min-width: fit-content; 
-                                margin-right: 10px; line-height: 1.5;
+                                width:  fit-content !important;
+                                margin-right: 10px; line-height: 1.75;
                             }                            
-                            &:last-child { border-left: 2px dotted $oxfordBlue; }
                         }
                     }
                 }                
                 .individual { 
                     display: none; 
-                    .b-individual {
-                        flex-wrap: nowrap; align-items: center; justify-content: center;
-                        padding: 5px 0; border-bottom: 2px dotted $oxfordBlue;
-                        label {
-                            width: 170px !important; min-width: fit-content;                           
-                        }
-                        input[type = number] {
-                            width: 50px;
-                            appearance: initial !important;                            
-                        }  
-                        span {
-                            font-size: 9px !important; margin-left: 2.5px !important;
-                        }
-                        .form-select { 
-                            width: 35%; margin: 0 7px; 
-                        }                                                      
-                        &:nth-child(4) { border-bottom: 0; }  
+                    .input-group:nth-child(3), .input-group:nth-child(4) { border-bottom: 0; }
+                    .input-group {
+                        border-bottom: 2px dotted $oxfordBlue; padding: 5px;
+                        label { line-height: 1.5 !important; }
+                        span { font-size: 9px; margin-left: 2px !important; }
+                        .form-select { width: 4% !important; margin-inline: 5px !important; }                                                      
+                        &:nth-child(4) { border-right: 0; }  
                     }
-                    .bg-color { border-left: 0 !important; }
+                    .bg-color { height: 30px; border: 0 !important; }
                 }      
             }    
             .form-check {
-                margin: 0; padding: 5px 0; 
-                border-bottom: 2px solid $oxfordBlue;
-                label {
-                    font-size: 15px; font-weight: bold;
-                    color: $oxfordBlue;
-                }
+                background-color: $redCrayola; border: 2px solid $oxfordBlue; border-top: 0;
+                margin: 0; padding: 5px 0; border-radius: 0 0 5px 5px; color: white;
+                label { font-size: 14px; line-height: 1.75; }
                 input {
                     float: initial; margin-inline: 10px; margin-top: 0;
-                    vertical-align: middle; border-color: $oxfordBlue;
-                    cursor: pointer;
+                    vertical-align: middle; border-color: $oxfordBlue; cursor: pointer;
                 }
             }
             .border-preview {                
-                small {
-                    font-size: 8.5px; letter-spacing: 1px; 
-                    opacity: .5; cursor: default;
-                }
+                small { font-size: 8.5px; letter-spacing: 1px; opacity: .5; cursor: default; }
                 .preview {
-                    width: 100%; height: 200px !important; position: relative;
+                    width: 100%; height: 175px; position: relative;
                     background-color: $naplesYellow; border-radius: 5px;
                     span {
-                        position: absolute;
-                        font-size: 16px;  letter-spacing: 1px;
-                        color: $oxfordBlue; opacity: .5; user-select: none;
+                        position: absolute; 
+                        font-size: 16px; letter-spacing: 1px; color: $oxfordBlue; opacity: .5; user-select: none;
                     }
                 }
             }
             .border-code {
-                flex-wrap: nowrap;
-                margin-top: 10px;
+                flex-wrap: nowrap; margin-top: 10px;
                 .form-floating {
                     width: 100%;
                     textarea {
-                        height: fit-content;
+                        height: 100px;
                         border: 2px solid $oxfordBlue; border-radius: 5px; cursor: copy;
                         font-size: 14px; color: $oxfordBlue;      
                         &::selection { background-color: $naplesYellow; }                  
@@ -175,9 +143,7 @@ body {
                 button {
                     background-color: $redCrayola;
                     margin-left: 5px; transition: 0.25s;
-                    &:hover { 
-                        background-color: var(--bs-btn-hover-bg); scale: 1.05;
-                    }
+                    &:hover { background-color: var(--bs-btn-hover-bg); scale: 1.05; }
                 }
             }                     
         }
