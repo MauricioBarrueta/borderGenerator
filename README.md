@@ -5,4 +5,4 @@
 as well as the border type and color, at the same time the preview of the style is shown and also the CSS code to copy it.
 
 
-![borderRadius](https://github.com/user-attachments/assets/97ede59d-dc87-4b5f-b687-b943e226957d)
+![border](https://github.com/user-attachments/assets/e9e9d086-08db-4999-a56e-cf4a2b1a0e3f)
