@@ -5,4 +5,4 @@
 as well as the border type and color, at the same time the preview of the style is shown and also the CSS code to copy it.
 
 
-![border](https://github.com/user-attachments/assets/14592375-65d6-4512-81d1-d5d7a715f3f1)
+![border](https://github.com/user-attachments/assets/e9e9d086-08db-4999-a56e-cf4a2b1a0e3f)
