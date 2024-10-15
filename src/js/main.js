@@ -6,7 +6,6 @@ const generalOrIndividual = () => {
 
 /* Resetea los valores al activar/desactivar el 'switch' */
 checkBtn.addEventListener('change', () => {
-    resetElements()
     generalOrIndividual()
     borderPreview.style.border = ''
     cardTitle.innerHTML = checkBtn.checked ? "Personaliza los valores de la propiedad 'border' de manera individual:" 
@@ -97,5 +96,5 @@ const resetElements = () => {
     borderWidth.value = borderWidthValue.value = 2
     borderStyle.value = brSelect.value = blSelect.value = 'solid', btSelect.value = bbSelect.value = 'double'
     borderColor.value = btColor.value = brColor.value = bbColor.value = blColor.value = '#000000', bgColor.value = bgColorIndividual.value = '#F9DC5C'
-    cssCodeText.value = ''
+    checkBtn.checked = false, generalOrIndividual(), generateGeneralBorder()
 }

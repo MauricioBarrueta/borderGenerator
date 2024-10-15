@@ -186,18 +186,20 @@ body .container .card-container .border-properties .individual .input-group:nth-
   border-bottom: 0;
 }
 body .container .card-container .border-properties .individual .input-group {
+  flex-wrap: nowrap;
   border-bottom: 2px dotted #011936;
   padding: 5px;
 }
 body .container .card-container .border-properties .individual .input-group label {
-  line-height: 1.5 !important;
+  width: 60px;
+  font-size: 14px !important;
+  line-height: 1.75;
 }
 body .container .card-container .border-properties .individual .input-group span {
   font-size: 9px;
   margin-left: 2px !important;
 }
 body .container .card-container .border-properties .individual .input-group .form-select {
-  width: 4% !important;
   margin-inline: 5px !important;
 }
 body .container .card-container .border-properties .individual .input-group:nth-child(4) {
@@ -211,9 +213,9 @@ body .container .card-container .form-check {
   background-color: #ED254E;
   border: 2px solid #011936;
   border-top: 0;
+  border-bottom-style: dotted;
   margin: 0;
   padding: 5px 0;
-  border-radius: 0 0 5px 5px;
   color: white;
 }
 body .container .card-container .form-check label {
@@ -227,6 +229,21 @@ body .container .card-container .form-check input {
   vertical-align: middle;
   border-color: #011936;
   cursor: pointer;
+}
+body .container .card-container .reset-container {
+  padding: 5px;
+  border-radius: 0 0 5px 5px;
+  background-color: #ED254E;
+  border: 2px solid #011936;
+  border-top: 0;
+}
+body .container .card-container .reset-container .reset-btn {
+  background-color: #465362;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+body .container .card-container .reset-container .reset-btn:hover {
+  background-color: #000;
 }
 body .container .card-container .border-preview small {
   font-size: 8.5px;
