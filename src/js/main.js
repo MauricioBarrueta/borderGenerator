@@ -1,15 +1,16 @@
-const general = document.querySelector('.column'), individual = document.querySelector('.individual'), checkBtn = document.getElementById('individual-border')
+const general = document.querySelectorAll('.column'), individual = document.querySelectorAll('.individual'), checkBtn = document.getElementById('individual-border')
 /* Verifica si los valores de la propiedad serán generales o individuales */
 const generalOrIndividual = () => {
-    checkBtn.checked ? ( general.style.display = 'none', individual.style.display = 'flex') : (general.style.display = '', individual.style.display = 'none')
+    general.forEach(el => el.style.display = checkBtn.checked ? 'none' : '')
+    individual.forEach(el => el.style.display = checkBtn.checked ? 'flex' : 'none')
 }
 
 /* Resetea los valores al activar/desactivar el 'switch' */
 checkBtn.addEventListener('change', () => {
     generalOrIndividual()
     borderPreview.style.border = ''
-    cardTitle.innerHTML = checkBtn.checked ? "Personaliza los valores de la propiedad 'border' de manera individual:" 
-        : "Personaliza el valor de la propiedad 'border' de manera general:"
+    cardTitle.innerHTML = checkBtn.checked ? "Personaliza los valores individuales de la propiedad border:" 
+        : "Personaliza el valor de la propiedad border:"
 })
 
 const borderWidth = document.getElementById('bWidth'), borderWidthValue = document.getElementById('bRange'), bgColor = document.getElementById('bg-color'),
@@ -24,7 +25,7 @@ let cardTitle = document.querySelector('.title')
 
 window.onload = () => {
     checkBtn.checked = false
-    cardTitle.innerHTML = "Personaliza el valor de la propiedad 'border' de manera general:"
+    cardTitle.innerHTML = "Personaliza el valor de la propiedad border:"
 
     const selectElement = document.querySelectorAll('select')
     const options = ['dotted', 'dashed', 'solid', 'double', 'groove', 'ridge', 'inset', 'outset', 'none', 'hidden']
@@ -68,7 +69,7 @@ const generateGeneralBorder = () => {
     var code = `${borderWidth.value}px ${borderStyle.options[borderStyle.selectedIndex].text} ${borderColor.value.toUpperCase()}`   
     borderPreview.style.border = code
     borderPreview.style.background = bgColor.value
-    cssCodeText.value = `border: ${code};`
+    cssCodeText.value = `border: ${code};\n\nbackground-color: ${bgColor.value.toUpperCase()}; //opcional`
 }
 
 /* Función que genera el estilo y el código de los bordes individuales */
@@ -80,9 +81,9 @@ const generateIndividualBorder = () => {
     borderPreview.style.borderTop = top, borderPreview.style.borderRight = right, borderPreview.style.borderBottom = bottom, borderPreview.style.borderLeft = left
     borderPreview.style.background = bgColorIndividual.value    
     let individualCode
-    individualCode = top >= '1' ? `border-top: ${top};\t` : '', individualCode += right >= '1' ? `border-right: ${right};\n` : '',
-        individualCode += bottom >= '1' ? `border-bottom: ${bottom};\t` : '', individualCode += left >= '1' ? `border-left: ${left};` : ''
-    cssCodeText.value = individualCode
+    individualCode = top >= '1' ? `border-top: ${top};` : '', individualCode += right >= '1' ? ` border-right: ${right};\n` : '',
+        individualCode += bottom >= '1' ? `border-bottom: ${bottom};` : '', individualCode += left >= '1' ? ` border-left: ${left};` : ''
+    cssCodeText.value = `${individualCode}\n\nbackground-color: ${bgColor.value.toUpperCase()}; //opcional`
 }
 
 copyBtn.addEventListener('click', () => {
