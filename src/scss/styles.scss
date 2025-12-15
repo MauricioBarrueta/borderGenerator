@@ -38,7 +38,7 @@ body {
             }
             
             .border-properties {     
-                flex-direction: row; flex-wrap: nowrap;
+                flex-direction: row; flex-wrap: wrap; //flex-wrap: nowrap;
                 margin: 5px 0 auto; 
                 .column {
                     width: 50%; padding: 1em 0.5rem; 
@@ -82,33 +82,31 @@ body {
                             &::-moz-color-swatch { border-radius: 5px; border: 1px solid $oxfordBlue; }
                         }      
                     }    
+
+                    small, .fa-arrows-up-down { 
+                        font-size: 9px; color: $naplesYellow; 
+                         margin: 6px 0 0 8px !important; cursor: help;
+                    }
+                    .fa-arrows-up-down { margin: 0 !important; }
                         
                     .border-color, .bg-color {
                         flex-direction: row;
                         border-top: 2px dotted $oxfordBlue; margin-bottom: 0; padding-top: 0.75rem;
-
                         label { width: auto; margin-right: 10px; }
-                        small { 
-                            font-size: 9px; color: $naplesYellow; 
-                            margin: 6px 0 0 8px !important; cursor: help;
-                        }
                     }  
                 }      
 
                 .individual { 
-                    width: 100%; flex-wrap: wrap; display: none; 
-                    padding-bottom: 0.5rem; border-radius: 5px 5px 0 0;                   
-                    .input-group {
-                        width: 50%; flex-direction: row; flex-wrap: nowrap;
-                        margin-bottom: 10px;
-                        
-                        label { width: fit-content; margin-right: 8px; }
-                        .form-select { flex: 1; }      
-                        &:nth-child(1), &:nth-child(3) { border-right: 2px dotted $oxfordBlue; padding-right: 5px; }  
-                        &:nth-child(2), &:nth-child(4) { padding-left: 5px; }   
-                        &:nth-child(3), &:nth-child(4) { border-bottom: 2px dotted $oxfordBlue; padding-bottom: 0.5rem; margin-bottom: 0; } 
+                    display: none; 
+                    flex-direction: column; padding-bottom: 0.25rem;
+                    &:nth-child(3) { border-radius: 5px 0 0 0; border-right: 0; }
+                    &:nth-child(4) { border-radius: 0 5px 0 0; border-left-style: dotted; }
+                    &:nth-child(5) { 
+                        width: 100%; padding: 0.5rem;
+                        border-top: 0;
+                        .input-group { border-top: 0; padding-top: 0; }
                     }
-                    .bg-color { border: 0 !important; margin: 0 auto; padding-top: 0.5rem; }
+                    .input-group { .form-select { flex: 1; } }
                 }      
             }    
 
@@ -134,14 +132,14 @@ body {
             }
 
             .border-preview {   
-                margin: 5px 0;
                 small { font-size: 10px; letter-spacing: 1px; opacity: .65; cursor: default; }
                 .preview {
-                    width: 100%; height: 130px; position: relative;
-                    background-color: $naplesYellow; border-radius: 5px;
+                    width: 120px; height: 120px; position: relative;
+                    background-color: $naplesYellow; border-radius: 5px; margin: 0 auto; margin-top: 5px;
                     span {
-                        position: absolute; 
-                        font-size: 16px; letter-spacing: 1px; color: $oxfordBlue; opacity: .5; user-select: none;
+                        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                        font-size: 12px; letter-spacing: 1px; white-space: nowrap; color: $oxfordBlue; 
+                        opacity: .5; user-select: none;
                     }
                 }
             }
@@ -152,7 +150,7 @@ body {
                 .form-floating {
                     width: 100%;
                     textarea {
-                        height: 110px;
+                        height: 100px;
                         border: 2px solid $oxfordBlue; border-radius: 5px; cursor: copy;
                         font-size: 14px; line-height: 1.5; color: $oxfordBlue;      
                         &::selection { background-color: $naplesYellow; }                  

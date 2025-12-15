@@ -31,13 +31,14 @@
                     <div class="input-group">
                         <label for="bWidth" class="form-label">width</label>
                         <div class="input-row">
-                            <input type="range" class="form-range" min="0" max="65" step="1" value="1" id="bWidth" oninput="bRange.value=bWidth.value">
-                            <input type="number" id="bRange" min="0" max="100" value="1" oninput="bWidth.value=bRange.value"><span>px</span>
+                            <input type="range" class="form-range" min="0" max="50" step="1" value="1" id="bWidth" oninput="bRange.value=bWidth.value">
+                            <input type="number" id="bRange" min="0" max="50" value="1" oninput="bWidth.value=bRange.value"><span>px</span>
                         </div>                        
                     </div>           
                     <div class="input-group border-color">
                         <label class="form-label" for="border-color">color</label>
                         <input type="color" id="border-color" value="#000000">
+                        <small title="Borde">&#xf05a;</small>
                     </div> 
                 </div>  
                 <div class="column">
@@ -58,7 +59,8 @@
                     <div class="input-group">
                         <label for="btWidth" class="form-label">top</label>
                         <div class="input-row">
-                            <input type="number" id="btRange" min="0" max="65" value="1"><span>px</span>
+                            <i class="fa-solid fa-arrows-up-down m-0" title="Usa las teclas ↑↓"></i>
+                            <input type="number" id="btRange" min="0" max="50" value="1"><span>px</span>
                             <select class="form-select" id="bt-style"></select>
                             <input type="color" id="bt-color" title="Border Top Color">
                         </div>
@@ -66,15 +68,19 @@
                     <div class="input-group">
                         <label for="brWidth" class="form-label">right</label>
                         <div class="input-row">
-                            <input type="number" id="brRange" min="0" max="65" value="1"><span>px</span>
+                            <i class="fa-solid fa-arrows-up-down m-0" title="Usa las teclas ↑↓"></i>
+                            <input type="number" id="brRange" min="0" max="50" value="1"><span>px</span>
                             <select class="form-select" id="br-style"></select>
                             <input type="color" id="br-color" title="Border Right Color">
                         </div>
-                    </div>                    
+                    </div>  
+                </div>
+                <div class="column individual">                  
                     <div class="input-group">
                         <label for="blWidth" class="form-label">left</label>
                         <div class="input-row">
-                            <input type="number" id="blRange" min="0" max="65" value="1"><span>px</span>
+                            <i class="fa-solid fa-arrows-up-down m-0" title="Usa las teclas ↑↓"></i>
+                            <input type="number" id="blRange" min="0" max="50" value="1"><span>px</span>
                             <select class="form-select" id="bl-style"></select>
                             <input type="color" id="bl-color" title="Border Left Color">
                         </div>
@@ -82,17 +88,20 @@
                     <div class="input-group">
                         <label for="bbWidth" class="form-label">bottom</label>
                         <div class="input-row">
-                            <input type="number" id="bbRange" min="0" max="65" value="1"><span>px</span>
+                            <i class="fa-solid fa-arrows-up-down m-0" title="Usa las teclas ↑↓"></i>
+                            <input type="number" id="bbRange" min="0" max="50" value="1"><span>px</span>
                             <select class="form-select" id="bb-style"></select>
                             <input type="color" id="bb-color" title="Border Bottom Color">
                         </div>
-                    </div>
+                    </div>                    
+                </div>  
+                <div class="column individual">
                     <div class="input-group bg-color">
                         <label class="form-label" for="bg-color">background</label>
                         <input type="color" id="bg-color-individual" value="#F9DC5C">
                         <small title="Opcional">&#xf05a;</small>
                     </div>
-                </div>                        
+                </div>                      
             </div>  
 
             <div class="form-check form-switch">
@@ -105,7 +114,7 @@
             </div>
             
             <div class="border-preview">
-                <small>&#xf071;&nbsp; El resultado final depende del tamaño del elemento</small>
+                <small>&#xf071;&nbsp; El resultado depende completamente de las dimensiones del elemento</small>
                 <div class="preview"><span>Vista previa</span></div>
             </div> 
                         
