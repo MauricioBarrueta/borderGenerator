@@ -62,7 +62,7 @@ body .container .card-container .title {
 }
 body .container .card-container .border-properties {
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   margin: 5px 0 auto;
 }
 body .container .card-container .border-properties .column {
@@ -159,6 +159,15 @@ body .container .card-container .border-properties .column .input-group input[ty
   border-radius: 5px;
   border: 1px solid #011936;
 }
+body .container .card-container .border-properties .column small, body .container .card-container .border-properties .column .fa-arrows-up-down {
+  font-size: 9px;
+  color: #F9DC5C;
+  margin: 6px 0 0 8px !important;
+  cursor: help;
+}
+body .container .card-container .border-properties .column .fa-arrows-up-down {
+  margin: 0 !important;
+}
 body .container .card-container .border-properties .column .border-color, body .container .card-container .border-properties .column .bg-color {
   flex-direction: row;
   border-top: 2px dotted #011936;
@@ -169,49 +178,30 @@ body .container .card-container .border-properties .column .border-color label, 
   width: auto;
   margin-right: 10px;
 }
-body .container .card-container .border-properties .column .border-color small, body .container .card-container .border-properties .column .bg-color small {
-  font-size: 9px;
-  color: #F9DC5C;
-  margin: 6px 0 0 8px !important;
-  cursor: help;
-}
 body .container .card-container .border-properties .individual {
-  width: 100%;
-  flex-wrap: wrap;
   display: none;
-  padding-bottom: 0.5rem;
-  border-radius: 5px 5px 0 0;
+  flex-direction: column;
+  padding-bottom: 0.25rem;
 }
-body .container .card-container .border-properties .individual .input-group {
-  width: 50%;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  margin-bottom: 10px;
+body .container .card-container .border-properties .individual:nth-child(3) {
+  border-radius: 5px 0 0 0;
+  border-right: 0;
 }
-body .container .card-container .border-properties .individual .input-group label {
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-right: 8px;
+body .container .card-container .border-properties .individual:nth-child(4) {
+  border-radius: 0 5px 0 0;
+  border-left-style: dotted;
+}
+body .container .card-container .border-properties .individual:nth-child(5) {
+  width: 100%;
+  padding: 0.5rem;
+  border-top: 0;
+}
+body .container .card-container .border-properties .individual:nth-child(5) .input-group {
+  border-top: 0;
+  padding-top: 0;
 }
 body .container .card-container .border-properties .individual .input-group .form-select {
   flex: 1;
-}
-body .container .card-container .border-properties .individual .input-group:nth-child(1), body .container .card-container .border-properties .individual .input-group:nth-child(3) {
-  border-right: 2px dotted #011936;
-  padding-right: 5px;
-}
-body .container .card-container .border-properties .individual .input-group:nth-child(2), body .container .card-container .border-properties .individual .input-group:nth-child(4) {
-  padding-left: 5px;
-}
-body .container .card-container .border-properties .individual .input-group:nth-child(3), body .container .card-container .border-properties .individual .input-group:nth-child(4) {
-  border-bottom: 2px dotted #011936;
-  padding-bottom: 0.5rem;
-  margin-bottom: 0;
-}
-body .container .card-container .border-properties .individual .bg-color {
-  border: 0 !important;
-  margin: 0 auto;
-  padding-top: 0.5rem;
 }
 body .container .card-container .form-check {
   background-color: #ED254E;
@@ -252,9 +242,6 @@ body .container .card-container .reset-container .reset-btn:hover {
 body .container .card-container .reset-container .reset-btn i {
   font-size: 10px;
 }
-body .container .card-container .border-preview {
-  margin: 5px 0;
-}
 body .container .card-container .border-preview small {
   font-size: 10px;
   letter-spacing: 1px;
@@ -262,16 +249,22 @@ body .container .card-container .border-preview small {
   cursor: default;
 }
 body .container .card-container .border-preview .preview {
-  width: 100%;
-  height: 130px;
+  width: 120px;
+  height: 120px;
   position: relative;
   background-color: #F9DC5C;
   border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 5px;
 }
 body .container .card-container .border-preview .preview span {
   position: absolute;
-  font-size: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
   letter-spacing: 1px;
+  white-space: nowrap;
   color: #011936;
   opacity: 0.5;
   -webkit-user-select: none;
@@ -286,7 +279,7 @@ body .container .card-container .border-code .form-floating {
   width: 100%;
 }
 body .container .card-container .border-code .form-floating textarea {
-  height: 110px;
+  height: 100px;
   border: 2px solid #011936;
   border-radius: 5px;
   cursor: copy;

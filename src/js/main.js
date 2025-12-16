@@ -83,7 +83,7 @@ const generateIndividualBorder = () => {
     let individualCode
     individualCode = top >= '1' ? `border-top: ${top};` : '', individualCode += right >= '1' ? ` border-right: ${right};\n` : '',
         individualCode += bottom >= '1' ? `border-bottom: ${bottom};` : '', individualCode += left >= '1' ? ` border-left: ${left};` : ''
-    cssCodeText.value = `${individualCode}\n\nbackground-color: ${bgColor.value.toUpperCase()}; //opcional`
+    cssCodeText.value = `${individualCode}\n\nbackground-color: ${bgColorIndividual.value.toUpperCase()}; //opcional`
 }
 
 copyBtn.addEventListener('click', () => {
