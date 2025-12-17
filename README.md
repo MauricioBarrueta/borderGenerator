@@ -4,4 +4,5 @@
 
 🔗 https://mauriciobarrueta.github.io/borderGenerator/
 
-![border](https://github.com/user-attachments/assets/ca65c197-c3e0-4eeb-86c5-4cba94953bff)
+
+<img width="1366" height="653" alt="border" src="https://github.com/user-attachments/assets/e5ef6229-86ed-415d-b494-1ea9a96c2b76" />
